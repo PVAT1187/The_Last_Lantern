@@ -105,3 +105,30 @@ global.bosses =
         }
     }
 }
+
+global.minigames =
+{
+    bowl_tapping:
+    {
+        name: "BOWL TAPPING",
+        description: "Tap the bowl as fast as you can!",
+        room: rm_bowl_tapping,
+        isPlayed: false
+    },
+    
+    black_cat:
+    {
+        name: "BLACK CAT",
+        description: "Find the black cat!",
+        room: rm_black_cat,
+        isPlayed: false
+    },
+    
+    ouija_board:
+    {
+        name: "OUIJA BOARD",
+        description: "Remember the keys!",
+        room: rm_ouija_board,
+        isPlayed: false
+    }
+}

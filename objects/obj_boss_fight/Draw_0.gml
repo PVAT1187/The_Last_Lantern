@@ -8,24 +8,8 @@ var bossSprite = variable_struct_get(boss.sprites, bossState);
 draw_sprite_ext(bossSprite, 0, bossStartX, bossStartY, bossScale, bossScale, 0, c_white, 1);
 
 // draw health bars
-function DrawHealthBar(name, x, y, width, height, currentHP, maxHP, color)
-{
-    var offset = 25;
-    
-    var fill = clamp(currentHP / maxHP, 0, 1);
-    
-    draw_set_colour(c_dkgray);
-    draw_rectangle(x, y, x + width, y + height, false);
-    
-    draw_set_colour(color);
-    draw_text(x, y - offset, name);
-    draw_rectangle(x, y, x + width * fill, y + height, false);
-    
-    draw_set_colour(c_white);
-}
-
-DrawHealthBar(player.name, playerBarStartX, startY, width, height, player.hp, player.hpMax, c_blue);
-DrawHealthBar(boss.name, bossBarStartX, startY, width, height, boss.hp, boss.hpMax, c_red);
+DrawBar(player.name, playerBarStartX, startY, width, height, player.hp, player.hpMax, c_blue);
+DrawBar(boss.name, bossBarStartX, startY, width, height, boss.hp, boss.hpMax, c_red);
 
 // draw candy bag and # of candies available
 draw_sprite_ext(spr_candy_bag, 0, 0, candyBagStartY, 1, 1, 0, c_white, 1);
