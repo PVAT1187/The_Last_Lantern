@@ -30,7 +30,6 @@ draw_sprite_stretched(spr_box, 0, secondBoxX, boxY, secondBoxWidth, boxHeight);
 draw_set_font(fn_m6x11);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_set_colour(c_gray);
 
 // draw action texts in the second box
 var numOfActions = array_length(actions);
@@ -40,8 +39,10 @@ for (var i = 0; i < numOfActions; ++i)
     var textX = x + textXOffset
     var textY = y + textBaseYOffset + i * textYSpacing;
     
+    draw_set_colour((i == selectedActionIndex) ? c_yellow : c_gray);
     draw_text(textX, textY, action.name);
 }
 
 // draw message text in the first box
+draw_set_colour(c_gray);
 draw_text_ext(textStartX, textStartY, message, -1, textWrapWidth);

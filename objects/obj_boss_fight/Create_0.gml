@@ -49,7 +49,7 @@ boss = variable_clone(global.bosses.dracula);
 combatants = [player, boss];
 
 turn = 0;
-currentAction = -1;
+selectedActionIndex = 0;
 message = "";
 waitTimeRemaining = 0;
 waitTimeFrames = 60;
@@ -59,12 +59,33 @@ function SelectAction()
     var currentCombatant = combatants[turn];
     var target = combatants[1 - turn];
     
-    // Todo: add a action menu selections here, and check for plater's available candies with action's candyCost
-    
     if (currentCombatant == player)
     {
-        var action = global.actions.attack;
-        BeginAction(currentCombatant, global.actions.attack, target);
+        selectedActionIndex += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
+     
+        var numOfActions = array_length(actions);   
+        if (selectedActionIndex > numOfActions - 1)
+        {
+            selectedActionIndex = 0;
+        }
+        if (selectedActionIndex < 0)
+        {
+            selectedActionIndex = numOfActions - 1;
+        }
+        
+        if (keyboard_check_pressed(vk_enter))
+        {
+            var action = variable_struct_get(global.actions, actions[selectedActionIndex])
+            
+            if (player.candy < action.candyCost)
+            {
+                message = "Not enough candy to perform the action!";
+            }
+            else
+            {
+                BeginAction(currentCombatant, action, target);
+            }
+        }
     }
     else 
     {
@@ -74,11 +95,7 @@ function SelectAction()
 }
 
 function BeginAction(user, action, target)
-{
-    currentUser = user;
-    currentAction = action;
-    currentTarget = target;
-    
+{   
     waitTimeRemaining = waitTimeFrames;
     
     if (user == player)
@@ -86,7 +103,7 @@ function BeginAction(user, action, target)
         player.candy -= action.candyCost;
     }
     
-    damageDealt = currentAction.func(user, target);
+    damageDealt = action.func(user, target);
     
     message = string(action.description, user.name) + " : " + string(damageDealt) + " damage dealt" ;
     
