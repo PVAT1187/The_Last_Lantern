@@ -24,15 +24,20 @@ startY = 30;
 playerStartX = 15;
 bossStartX = 510;
 
+// candy bag
+candyBagStartY = 35;
+numOfCandiesTextStartX = 50;
+numOfCandiesTextStartY = 60;
+
 // action texts
-textXOffset = 190;
-textBaseYOffset = 55;
-textYSpacing = 25;
+actionTextXOffset = 190;
+actionTextBaseYOffset = 55;
+actionTextYSpacing = 25;
 
 // message text
-textStartX = 40;
-textStartY = 220;
-textWrapWidth = firstBoxWidth - textStartX * 2;
+messageTextStartX = 40;
+messageTextStartY = 220;
+messageTextWrapWidth = firstBoxWidth - messageTextStartX * 2;
 
 actions = 
 [
@@ -79,7 +84,7 @@ function SelectAction()
             
             if (player.candy < action.candyCost)
             {
-                message = "Not enough candy to perform the action!";
+                message = "Not enough candy to perform this action!";
             }
             else
             {
