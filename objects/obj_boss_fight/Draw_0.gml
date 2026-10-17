@@ -1,9 +1,30 @@
 // draw boss
-draw_sprite_ext(spr_boss_idle, 0, boss_x, boss_y, boss_scale, boss_scale, 0, c_white, 1);
+var bossSprite = variable_struct_get(boss.sprites, bossState);
+draw_sprite_ext(bossSprite, 0, bossX, bossY, bossScale, bossScale, 0, c_white, 1);
+
+function DrawHealthBar(name, x, y, width, height, currentHP, maxHP, color)
+{
+    var offset = 25;
+    
+    var fill = clamp(currentHP / maxHP, 0, 1);
+    
+    draw_set_colour(c_dkgray);
+    draw_rectangle(x, y, x + width, y + height, false);
+    
+    draw_set_colour(color);
+    draw_text(x, y - offset, name);
+    draw_rectangle(x, y, x + width * fill, y + height, false);
+    
+    draw_set_colour(c_white);
+}
+
+// draw health bars
+DrawHealthBar(player.name, playerStartX, startY, width, height, 5, player.hpMax, c_blue);
+DrawHealthBar(boss.name, bossStartX, startY, width, height, 15, boss.hpMax, c_red);
 
 // draw boxes
-draw_sprite_stretched(spr_box, 0, 0, box_y, first_box_width, box_height);
-draw_sprite_stretched(spr_box, 0, second_box_x, box_y, second_box_width, box_height);
+draw_sprite_stretched(spr_box, 0, 0, boxY, firstBoxWidth, boxHeight);
+draw_sprite_stretched(spr_box, 0, secondBoxX, boxY, secondBoxWidth, boxHeight);
 
 // configurate texts
 draw_set_font(fn_m6x11);
@@ -12,17 +33,12 @@ draw_set_valign(fa_top);
 draw_set_colour(c_gray);
 
 // draw action texts
-//draw_text(x + text_x_offset, y + 55, "ATTACK");
-//draw_text(x + text_x_offset, y + 80, "DEFENSE");
-//draw_text(x + text_x_offset, y + 105, "FLEE !!!");
-//draw_text(x + text_x_offset, y + 130, "PLEA ???");
-
 var numOfActions = array_length(actions);
 for (var i = 0; i < numOfActions; ++i)
 {
-    var action = actions[i];
-    var text_x = x + text_x_offset
-    var text_y = y + text_base_y_offset + i * text_y_spacing;
+    var action = variable_struct_get(global.actions, actions[i]);
+    var textX = x + textXOffset
+    var textY = y + textBaseYOffset + i * textYSpacing;
     
-    draw_text(text_x, text_y, action.name);
+    draw_text(textX, textY, action.name);
 }

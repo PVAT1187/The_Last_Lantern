@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fn_m6x11",
   "parent":{
-    "name":"Spooky 2D Jam",
-    "path":"Spooky 2D Jam.yyp",
+    "name":"Font",
+    "path":"folders/Font.yy",
   },
   "pointRounding":0,
   "ranges":[

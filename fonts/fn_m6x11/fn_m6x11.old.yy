@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fn_m6x11",
   "parent":{
-    "name":"First Pixel Game",
-    "path":"First Pixel Game.yyp",
+    "name":"Spooky 2D Jam",
+    "path":"Spooky 2D Jam.yyp",
   },
   "pointRounding":0,
   "ranges":[
