@@ -47,8 +47,9 @@ boss = variable_clone(global.bosses.dracula);
 combatants = [player, boss];
 
 turn = 0;
+offset = 30;
 waitTimeRemaining = 0;
-waitTimeFrames = 60;
+waitTimeFrames = 90;
 
 isBossIntroPlayed = false;
 isBossFightEnded = false;
@@ -67,7 +68,7 @@ function BossIntro()
     {
         isBossIntroPlayed = true;
         messageBox.message = "You have encountered " + boss.name + "! Ready to take actions.";
-        waitTimeRemaining = waitTimeFrames * 2;
+        waitTimeRemaining = waitTimeFrames + offset;
     }
     
     --waitTimeRemaining;
@@ -104,7 +105,7 @@ function SelectAction()
             
             if (player.candy < action.candyCost)
             {
-                waitTimeRemaining = waitTimeFrames * 2;
+                waitTimeRemaining = waitTimeFrames + offset;
                 messageBox.message = "Not enough candies to perform this action!";
             }
             else
@@ -140,10 +141,10 @@ function BeginAction(user, action, target)
             messageBox.message += " : " + string(damageDealt) + " damage dealt";
             break;
         case global.actions.flee:
-            messageBox.message += (!player.isFled) ?  "\nYou cannot get away! You wished for all of this." : "";
+            messageBox.message += (!player.isFled) ?  "\nYou cannot get away! You wished for all of this `_'" : "";
             break;
         case global.actions.plea:
-            messageBox.message += (!player.isSpared) ? "\n" + boss.name + " is not impressed." : "";
+            messageBox.message += (!player.isSpared) ? "\n" + boss.name + " is not impressed -0-" : "";
             break;
     }
             
