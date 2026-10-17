@@ -36,7 +36,7 @@ global.actions =
     {
         name: "FLEE",
         description1: "{0} runs away!!!",
-        description2: "Costs 3 candies, and there will be a chance of dropping more along the way.",
+        description2: "Costs 3 candies, can be dropping more along the way, who knows :)",
         candyCost: 3,
         animation: "hit",
         func: function(user, target)
@@ -54,7 +54,7 @@ global.actions =
     {
         name: "PLEA",
         description1: "{0} pleads for mercy???",
-        description2: "Costs you nothing, and you think it is going to work!?",
+        description2: "Costs you nothing, but bruh... seriously? You think it is going to work?",
         candyCost: 0,
         animation: "hit",
         func: function(user, target)
@@ -81,7 +81,7 @@ global.player =
         isDefended: false,
         isFled: false,
         isSpared: false,
-        actions: []
+        actions: [global.actions.attack, global.actions.defense, global.actions.flee, global.actions.plea]
     }
 }
 
@@ -94,7 +94,7 @@ global.bosses =
         hpMax: 100,
         strength: 10,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
-        actions: [global.actions.attack, global.actions.defense], // flee and plea options later
+        actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
         candyValue: 5,
         isDefended: false,
         AIScript: function()
@@ -104,4 +104,4 @@ global.bosses =
             return action;
         }
     }
-}   
+}

@@ -39,8 +39,9 @@
     {"id":{"name":"obj_draw_messages","path":"objects/obj_draw_messages/obj_draw_messages.yy",},},
     {"id":{"name":"obj_path_randomization","path":"objects/obj_path_randomization/obj_path_randomization.yy",},},
     {"id":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},
+    {"id":{"name":"rm_ending_scene","path":"rooms/rm_ending_scene/rm_ending_scene.yy",},},
     {"id":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
-    {"id":{"name":"rm_start_scene","path":"rooms/rm_start_scene/rm_start_scene.yy",},},
+    {"id":{"name":"rm_starting_scene","path":"rooms/rm_starting_scene/rm_starting_scene.yy",},},
     {"id":{"name":"BossFightHelpers","path":"scripts/BossFightHelpers/BossFightHelpers.yy",},},
     {"id":{"name":"GameData","path":"scripts/GameData/GameData.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
@@ -66,9 +67,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},
     {"roomId":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
-    {"roomId":{"name":"rm_start_scene","path":"rooms/rm_start_scene/rm_start_scene.yy",},},
+    {"roomId":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},
+    {"roomId":{"name":"rm_starting_scene","path":"rooms/rm_starting_scene/rm_starting_scene.yy",},},
+    {"roomId":{"name":"rm_ending_scene","path":"rooms/rm_ending_scene/rm_ending_scene.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

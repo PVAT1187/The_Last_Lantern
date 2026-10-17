@@ -1,8 +1,8 @@
 // boss
-bossX = room_width / 2 - 100;
-bossY = room_height / 2 - 190;
 bossScale = 3;
 bossState = "idle";
+bossStartX = room_width / 2 - 100;
+bossStartY = room_height / 2 - 190;
 
 // health bars
 width = 90;
@@ -40,16 +40,17 @@ messageBox = instance_create_layer(
     obj_draw_messages
 );
 
-// boss fight: state functions
+// state functions
 player = global.player.player;
 boss = variable_clone(global.bosses.dracula);
 
 combatants = [player, boss];
 
 turn = 0;
-warningTimeRemaining = 0;
 waitTimeRemaining = 0;
 waitTimeFrames = 60;
+
+isBossIntroPlayed = false;
 isBossFightEnded = false;
 
 // keep these fresh every battle
@@ -57,6 +58,24 @@ player.hp = player.hpMax;
 player.isDefended = false;
 player.isFled = false;
 player.isSpared = false;
+
+function BossIntro()
+{
+    actionMenu.isActive = false;
+    
+    if (!isBossIntroPlayed)
+    {
+        isBossIntroPlayed = true;
+        messageBox.message = "You have encountered " + boss.name + "! Ready to take actions.";
+        waitTimeRemaining = waitTimeFrames * 2;
+    }
+    
+    --waitTimeRemaining;
+    if (waitTimeRemaining == 0)
+    {
+        state = SelectAction;
+    }
+}
 
 function SelectAction()
 {
@@ -70,9 +89,9 @@ function SelectAction()
         var actionKey = string_lower(actionMenu.actions[actionMenu.selectedActionIndex]);
         var action = variable_struct_get(global.actions, actionKey);
         
-        if (warningTimeRemaining > 0)
+        if (waitTimeRemaining > 0)
         {
-            --warningTimeRemaining;
+            --waitTimeRemaining;
         }
         else 
         {
@@ -85,7 +104,7 @@ function SelectAction()
             
             if (player.candy < action.candyCost)
             {
-                warningTimeRemaining = waitTimeFrames;
+                waitTimeRemaining = waitTimeFrames * 2;
                 messageBox.message = "Not enough candies to perform this action!";
             }
             else
@@ -196,7 +215,15 @@ function EndBossFight()
         {
             messageBox.message = "You lost... Say goodbye to your loved one, heheheh";
         }
+        
+        waitTimeRemaining = waitTimeFrames;
+    }
+    
+    --waitTimeRemaining;
+    if (waitTimeRemaining)
+    {
+        room_goto(rm_path_randomization);
     }
 }
 
-state = SelectAction;
+state = BossIntro;

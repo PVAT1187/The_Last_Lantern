@@ -5,7 +5,7 @@ draw_set_valign(fa_top);
 
 // draw boss
 var bossSprite = variable_struct_get(boss.sprites, bossState);
-draw_sprite_ext(bossSprite, 0, bossX, bossY, bossScale, bossScale, 0, c_white, 1);
+draw_sprite_ext(bossSprite, 0, bossStartX, bossStartY, bossScale, bossScale, 0, c_white, 1);
 
 // draw health bars
 function DrawHealthBar(name, x, y, width, height, currentHP, maxHP, color)
