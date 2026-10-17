@@ -19,8 +19,8 @@ function DrawHealthBar(name, x, y, width, height, currentHP, maxHP, color)
 }
 
 // draw health bars
-DrawHealthBar(player.name, playerStartX, startY, width, height, 5, player.hpMax, c_blue);
-DrawHealthBar(boss.name, bossStartX, startY, width, height, 15, boss.hpMax, c_red);
+DrawHealthBar(player.name, playerStartX, startY, width, height, player.hp, player.hpMax, c_blue);
+DrawHealthBar(boss.name, bossStartX, startY, width, height, boss.hp, boss.hpMax, c_red);
 
 // draw boxes
 draw_sprite_stretched(spr_box, 0, 0, boxY, firstBoxWidth, boxHeight);
@@ -32,7 +32,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 draw_set_colour(c_gray);
 
-// draw action texts
+// draw action texts in the second box
 var numOfActions = array_length(actions);
 for (var i = 0; i < numOfActions; ++i)
 {
@@ -42,3 +42,6 @@ for (var i = 0; i < numOfActions; ++i)
     
     draw_text(textX, textY, action.name);
 }
+
+// draw message text in the first box
+draw_text_ext(textStartX, textStartY, message, -1, textWrapWidth);

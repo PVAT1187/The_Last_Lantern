@@ -16,6 +16,7 @@
     {"name":"obj_boss_fight","order":3,"path":"objects/obj_boss_fight/obj_boss_fight.yy",},
     {"name":"rm_path_selection","order":1,"path":"rooms/rm_path_selection/rm_path_selection.yy",},
     {"name":"rm_start_scene","order":2,"path":"rooms/rm_start_scene/rm_start_scene.yy",},
+    {"name":"BossFightHelpers","order":2,"path":"scripts/BossFightHelpers/BossFightHelpers.yy",},
     {"name":"Init","order":1,"path":"scripts/Init/Init.yy",},
     {"name":"spr_box","order":8,"path":"sprites/spr_box/spr_box.yy",},
     {"name":"spr_candy_brown","order":3,"path":"sprites/spr_candy_brown/spr_candy_brown.yy",},

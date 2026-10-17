@@ -36,6 +36,7 @@
     {"id":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},
     {"id":{"name":"rm_path_selection","path":"rooms/rm_path_selection/rm_path_selection.yy",},},
     {"id":{"name":"rm_start_scene","path":"rooms/rm_start_scene/rm_start_scene.yy",},},
+    {"id":{"name":"BossFightHelpers","path":"scripts/BossFightHelpers/BossFightHelpers.yy",},},
     {"id":{"name":"GameData","path":"scripts/GameData/GameData.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},

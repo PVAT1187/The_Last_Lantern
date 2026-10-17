@@ -29,6 +29,11 @@ textXOffset = 190;
 textBaseYOffset = 55;
 textYSpacing = 25;
 
+// message text
+textStartX = 40;
+textStartY = 220;
+textWrapWidth = firstBoxWidth - textStartX * 2;
+
 actions = 
 [
     "attack",
@@ -45,6 +50,7 @@ combatants = [player, boss];
 
 turn = 0;
 currentAction = -1;
+message = "";
 waitTimeRemaining = 0;
 waitTimeFrames = 60;
 
@@ -54,8 +60,17 @@ function SelectAction()
     var target = combatants[1 - turn];
     
     // Todo: add a action menu selections here, and check for plater's available candies with action's candyCost
-
-    BeginAction(currentCombatant, global.actions.attack, target);
+    
+    if (currentCombatant == player)
+    {
+        var action = global.actions.attack;
+        BeginAction(currentCombatant, global.actions.attack, target);
+    }
+    else 
+    {
+        var bossAction = boss.AIScript();
+        BeginAction(currentCombatant, bossAction, target);
+    }
 }
 
 function BeginAction(user, action, target)
@@ -65,13 +80,15 @@ function BeginAction(user, action, target)
     currentTarget = target;
     
     waitTimeRemaining = waitTimeFrames;
-
+    
     if (user == player)
     {
         player.candy -= action.candyCost;
     }
     
-    currentAction.func(currentUser, currentTarget);
+    damageDealt = currentAction.func(user, target);
+    
+    message = string(action.description, user.name) + " : " + string(damageDealt) + " damage dealt" ;
     
     if (user == player && action == global.actions.attack)
     {
