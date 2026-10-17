@@ -24,8 +24,8 @@ function DrawHealthBar(name, x, y, width, height, currentHP, maxHP, color)
     draw_set_colour(c_white);
 }
 
-DrawHealthBar(player.name, playerStartX, startY, width, height, player.hp, player.hpMax, c_blue);
-DrawHealthBar(boss.name, bossStartX, startY, width, height, boss.hp, boss.hpMax, c_red);
+DrawHealthBar(player.name, playerBarStartX, startY, width, height, player.hp, player.hpMax, c_blue);
+DrawHealthBar(boss.name, bossBarStartX, startY, width, height, boss.hp, boss.hpMax, c_red);
 
 // draw candy bag and # of candies available
 draw_sprite_ext(spr_candy_bag, 0, 0, candyBagStartY, 1, 1, 0, c_white, 1);

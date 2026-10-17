@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"Font","order":21,"path":"folders/Font.yy",},
     {"name":"Objects","order":18,"path":"folders/Objects.yy",},
+    {"name":"reusable_objects","order":8,"path":"folders/Objects/reusable_objects.yy",},
     {"name":"Rooms","order":16,"path":"folders/Rooms.yy",},
     {"name":"Scripts","order":19,"path":"folders/Scripts.yy",},
     {"name":"Sprites","order":17,"path":"folders/Sprites.yy",},
@@ -13,10 +14,9 @@
     {"name":"trees","order":3,"path":"folders/Sprites/trees.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"obj_action_menu","order":5,"path":"objects/obj_action_menu/obj_action_menu.yy",},
     {"name":"obj_boss_fight","order":3,"path":"objects/obj_boss_fight/obj_boss_fight.yy",},
-    {"name":"obj_draw_boxes","order":4,"path":"objects/obj_draw_boxes/obj_draw_boxes.yy",},
-    {"name":"obj_draw_messages","order":7,"path":"objects/obj_draw_messages/obj_draw_messages.yy",},
+    {"name":"obj_draw_boxes","order":1,"path":"objects/obj_draw_boxes/obj_draw_boxes.yy",},
+    {"name":"obj_draw_messages","order":2,"path":"objects/obj_draw_messages/obj_draw_messages.yy",},
     {"name":"obj_path_randomization","order":6,"path":"objects/obj_path_randomization/obj_path_randomization.yy",},
     {"name":"rm_path_randomization","order":1,"path":"rooms/rm_path_randomization/rm_path_randomization.yy",},
     {"name":"rm_start_scene","order":2,"path":"rooms/rm_start_scene/rm_start_scene.yy",},

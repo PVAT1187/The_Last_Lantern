@@ -9,8 +9,8 @@
   "name":"obj_draw_messages",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"reusable_objects",
+    "path":"folders/Objects/reusable_objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

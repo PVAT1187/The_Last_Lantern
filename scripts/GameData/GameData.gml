@@ -6,13 +6,14 @@ global.actions =
     attack:
     {
         name: "ATTACK",
-        description: "{0} attacks!",
+        description1: "{0} attacks!",
+        description2: "Costs 1 candy.",
         candyCost: 1,
         animation: "attack",
         func: function(user, target)
         {
             var damage = ceil(user.strength + random_range(-user.strength * 0.25, user.strength * 0.25));
-            var damageDealt = BossFightHPModifier(target, damage, 1);
+            var damageDealt = BossFightHPModifier(target, damage);
             return damageDealt;
         }
     },
@@ -20,36 +21,49 @@ global.actions =
     defense:
     {
         name: "DEFENSE",
-        description: "{0} defends!",
+        description1: "{0} defends!",
+        description2: "Costs 2 candies.",
         candyCost: 2,
         animation: "idle",
-        func: function()
+        func: function(user, target)
         {
-            
+            user.isDefended = true;
+            return 0;            
         }
     },
     
     flee:
     {
         name: "FLEE",
-        description: "{0} runs away!!!",
-        candyCost: 5,
+        description1: "{0} runs away!!!",
+        description2: "Costs 3 candies, and there will be a chance of dropping more along the way.",
+        candyCost: 3,
         animation: "hit",
-        func: function()
+        func: function(user, target)
         {
-            
+            if (user.hp <= user.hpMax / 2 && random(1) < 0.5)
+            {
+                user.isFled = true;
+                user.candy = max(0, user.candy - irandom_range(1, global.actions.flee.candyCost));
+            }
+            return 0;
         }
     },
     
     plea:
     {
         name: "PLEA",
-        description: "{0} pleads for mercy???",
+        description1: "{0} pleads for mercy???",
+        description2: "Costs you nothing, and you think it is going to work!?",
         candyCost: 0,
         animation: "hit",
-        func: function()
+        func: function(user, target)
         {
-            
+            if (user.hp <= user.hpMax / 2 && random(1) < 0.4)
+            {
+                user.isSpared = true;
+            }
+            return 0;
         }
     }
 }
@@ -61,9 +75,12 @@ global.player =
         name: "Player",
         hp: 100,
         hpMax: 100,
-        candy: 10,
+        candy: 20,
         candyMax: 20,
         strength: 5,
+        isDefended: false,
+        isFled: false,
+        isSpared: false,
         actions: []
     }
 }
@@ -77,8 +94,9 @@ global.bosses =
         hpMax: 100,
         strength: 10,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
-        actions: [global.actions.attack, global.actions.defense, global.actions.flee, global.actions.plea],
+        actions: [global.actions.attack, global.actions.defense], // flee and plea options later
         candyValue: 5,
+        isDefended: false,
         AIScript: function()
         {
             var randomActionIndex = irandom(array_length(actions) - 1);

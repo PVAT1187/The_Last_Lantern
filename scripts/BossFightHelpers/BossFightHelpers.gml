@@ -1,8 +1,13 @@
-function BossFightHPModifier(target, amount, isAlive)
+function BossFightHPModifier(target, amount)
 {   
-    if (isAlive && target.hp <= 0)
+    if (target.hp <= 0)
     {
         return 0;
+    }
+    
+    if (target.isDefended)
+    {
+        amount = ceil(amount / 2);
     }
     
     var oldHP = target.hp;

@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Font","folderPath":"folders/Font.yy","name":"Font","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"reusable_objects","folderPath":"folders/Objects/reusable_objects.yy","name":"reusable_objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -65,8 +66,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
     {"roomId":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},
+    {"roomId":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
     {"roomId":{"name":"rm_start_scene","path":"rooms/rm_start_scene/rm_start_scene.yy",},},
   ],
   "templateType":"game",

@@ -9,8 +9,8 @@ width = 90;
 height = 15;
 startY = 30;
 
-playerStartX = 15;
-bossStartX = 510;
+playerBarStartX = 15;
+bossBarStartX = 510;
 
 // candy bag
 candyBagStartY = 35;
@@ -47,8 +47,16 @@ boss = variable_clone(global.bosses.dracula);
 combatants = [player, boss];
 
 turn = 0;
+warningTimeRemaining = 0;
 waitTimeRemaining = 0;
 waitTimeFrames = 60;
+isBossFightEnded = false;
+
+// keep these fresh every battle
+player.hp = player.hpMax;
+player.isDefended = false;
+player.isFled = false;
+player.isSpared = false;
 
 function SelectAction()
 {
@@ -59,16 +67,26 @@ function SelectAction()
     {
         actionMenu.isActive = true;
         
+        var actionKey = string_lower(actionMenu.actions[actionMenu.selectedActionIndex]);
+        var action = variable_struct_get(global.actions, actionKey);
+        
+        if (warningTimeRemaining > 0)
+        {
+            --warningTimeRemaining;
+        }
+        else 
+        {
+            messageBox.message = string(action.description2);
+        }
+        
         if (actionMenu.isActionChosen)
         {
             actionMenu.isActionChosen = false;
             
-            var actionKey = string_lower(actionMenu.actions[actionMenu.selectedActionIndex]);
-            var action = variable_struct_get(global.actions, actionKey);
-            
             if (player.candy < action.candyCost)
             {
-                messageBox.message = "Not enough candy to perform this action!";
+                warningTimeRemaining = waitTimeFrames;
+                messageBox.message = "Not enough candies to perform this action!";
             }
             else
             {
@@ -95,8 +113,21 @@ function BeginAction(user, action, target)
     
     damageDealt = action.func(user, target);
     
-    messageBox.message = string(action.description, user.name) + " : " + string(damageDealt) + " damage dealt" ;
+    messageBox.message = string(action.description1, user.name); 
     
+    switch (action) 
+    {
+        case global.actions.attack:
+            messageBox.message += " : " + string(damageDealt) + " damage dealt";
+            break;
+        case global.actions.flee:
+            messageBox.message += (!player.isFled) ?  "\nYou cannot get away! You wished for all of this." : "";
+            break;
+        case global.actions.plea:
+            messageBox.message += (!player.isSpared) ? "\n" + boss.name + " is not impressed." : "";
+            break;
+    }
+            
     if (user == player && action == global.actions.attack)
     {
         bossState = "hit";
@@ -120,33 +151,52 @@ function PerformAction()
 
 function CheckVictory()
 {
-    //if (boss.hp <= 0)
-    //{
-    //    player.candy += boss.candyValue;
-    //    state = EndBossFight;
-    //}
-    //else if (player.hp <= 0)
-    //{
-    //    state = EndBossFight;
-    //}
-    //else 
-    //{
-    //    state = ProgressTurn;
-    //}
-    
-    state = ProgressTurn;
+    if (boss.hp <= 0)
+    {
+        player.candy += boss.candyValue;
+        state = EndBossFight;
+    }
+    else if (player.hp <= 0 || player.isFled || player.isSpared)
+    {
+        state = EndBossFight;
+    }
+    else 
+    {
+        state = ProgressTurn;
+    }
 }
 
 function ProgressTurn()
 {
     turn = (turn + 1) % array_length(combatants);
     bossState = "idle";
+    combatants[turn].isDefended = false;
     state = SelectAction;
 }
 
 function EndBossFight()
 {
-    
+    if (!isBossFightEnded)
+    {
+        isBossFightEnded = true;
+        
+        if (boss.hp <= 0)
+        {
+            messageBox.message = "Congratulations! You have earned " + string(boss.candyValue) + " candies for winning " + string(boss.name);
+        }
+        else if (player.isFled)
+        {
+            messageBox.message = "You ran away!? You are a coward!";
+        }
+        else if (player.isSpared)
+        {
+            messageBox.message = boss.name + " lets you go??? You are lucky, child, but it only happens once.";
+        }
+        else
+        {
+            messageBox.message = "You lost... Say goodbye to your loved one, heheheh";
+        }
+    }
 }
 
 state = SelectAction;
