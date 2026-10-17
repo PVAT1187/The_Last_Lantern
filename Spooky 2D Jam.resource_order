@@ -13,8 +13,12 @@
     {"name":"trees","order":3,"path":"folders/Sprites/trees.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_action_menu","order":5,"path":"objects/obj_action_menu/obj_action_menu.yy",},
     {"name":"obj_boss_fight","order":3,"path":"objects/obj_boss_fight/obj_boss_fight.yy",},
-    {"name":"rm_path_selection","order":1,"path":"rooms/rm_path_selection/rm_path_selection.yy",},
+    {"name":"obj_draw_boxes","order":4,"path":"objects/obj_draw_boxes/obj_draw_boxes.yy",},
+    {"name":"obj_draw_messages","order":7,"path":"objects/obj_draw_messages/obj_draw_messages.yy",},
+    {"name":"obj_path_randomization","order":6,"path":"objects/obj_path_randomization/obj_path_randomization.yy",},
+    {"name":"rm_path_randomization","order":1,"path":"rooms/rm_path_randomization/rm_path_randomization.yy",},
     {"name":"rm_start_scene","order":2,"path":"rooms/rm_start_scene/rm_start_scene.yy",},
     {"name":"BossFightHelpers","order":2,"path":"scripts/BossFightHelpers/BossFightHelpers.yy",},
     {"name":"Init","order":1,"path":"scripts/Init/Init.yy",},

@@ -1,20 +1,8 @@
 // boss
-xOffset = 100;
-yOffset = 190;
-
-bossX = room_width / 2 - xOffset;
-bossY = room_height / 2 - yOffset;
+bossX = room_width / 2 - 100;
+bossY = room_height / 2 - 190;
 bossScale = 3;
 bossState = "idle";
-
-// boxes
-boxY = 180;
-boxHeight = 190;
-
-firstBoxWidth = 450;
-
-secondBoxX = 430;
-secondBoxWidth = 210;
 
 // health bars
 width = 90;
@@ -29,23 +17,28 @@ candyBagStartY = 35;
 numOfCandiesTextStartX = 50;
 numOfCandiesTextStartY = 60;
 
-// action texts
-actionTextXOffset = 190;
-actionTextBaseYOffset = 55;
-actionTextYSpacing = 25;
-
-// message text
-messageTextStartX = 40;
-messageTextStartY = 220;
-messageTextWrapWidth = firstBoxWidth - messageTextStartX * 2;
-
-actions = 
+// action menu
+actionMenu = instance_create_layer(
+    room_width / 2 - ACTION_MENU_START_OFFSET, 
+    room_height / 2 - ACTION_MENU_START_OFFSET, 
+    "Instances", 
+    obj_action_menu
+);
+actionMenu.actions = 
 [
-    "attack",
-    "defense",
-    "flee",
-    "plea"
+    "ATTACK",
+    "DEFENSE",
+    "FLEE",
+    "PLEA"
 ]
+
+// message box
+messageBox = instance_create_layer(
+    room_width / 2 - ACTION_MENU_START_OFFSET, 
+    room_height / 2 - ACTION_MENU_START_OFFSET,
+    "Instances", 
+    obj_draw_messages
+);
 
 // boss fight: state functions
 player = global.player.player;
@@ -54,8 +47,6 @@ boss = variable_clone(global.bosses.dracula);
 combatants = [player, boss];
 
 turn = 0;
-selectedActionIndex = 0;
-message = "";
 waitTimeRemaining = 0;
 waitTimeFrames = 60;
 
@@ -66,25 +57,18 @@ function SelectAction()
     
     if (currentCombatant == player)
     {
-        selectedActionIndex += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);
-     
-        var numOfActions = array_length(actions);   
-        if (selectedActionIndex > numOfActions - 1)
-        {
-            selectedActionIndex = 0;
-        }
-        if (selectedActionIndex < 0)
-        {
-            selectedActionIndex = numOfActions - 1;
-        }
+        actionMenu.isActive = true;
         
-        if (keyboard_check_pressed(vk_enter))
+        if (actionMenu.isActionChosen)
         {
-            var action = variable_struct_get(global.actions, actions[selectedActionIndex])
+            actionMenu.isActionChosen = false;
+            
+            var actionKey = string_lower(actionMenu.actions[actionMenu.selectedActionIndex]);
+            var action = variable_struct_get(global.actions, actionKey);
             
             if (player.candy < action.candyCost)
             {
-                message = "Not enough candy to perform this action!";
+                messageBox.message = "Not enough candy to perform this action!";
             }
             else
             {
@@ -94,6 +78,7 @@ function SelectAction()
     }
     else 
     {
+        actionMenu.isActive = false;
         var bossAction = boss.AIScript();
         BeginAction(currentCombatant, bossAction, target);
     }
@@ -110,7 +95,7 @@ function BeginAction(user, action, target)
     
     damageDealt = action.func(user, target);
     
-    message = string(action.description, user.name) + " : " + string(damageDealt) + " damage dealt" ;
+    messageBox.message = string(action.description, user.name) + " : " + string(damageDealt) + " damage dealt" ;
     
     if (user == player && action == global.actions.attack)
     {

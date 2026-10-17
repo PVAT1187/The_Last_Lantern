@@ -1,3 +1,6 @@
+#macro FIRST_BOX_WIDTH 450
+#macro ACTION_MENU_START_OFFSET 7
+
 global.actions =
 {
     attack:
@@ -56,11 +59,11 @@ global.player =
     player:
     {
         name: "Player",
-        hp: 10,
-        hpMax: 10,
+        hp: 100,
+        hpMax: 100,
         candy: 10,
         candyMax: 20,
-        strength: 1,
+        strength: 5,
         actions: []
     }
 }
@@ -70,9 +73,9 @@ global.bosses =
     dracula:
     {
         name: "Dracula",
-        hp: 20,
-        hpMax: 20,
-        strength: 2,
+        hp: 100,
+        hpMax: 100,
+        strength: 10,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
         actions: [global.actions.attack, global.actions.defense, global.actions.flee, global.actions.plea],
         candyValue: 5,
