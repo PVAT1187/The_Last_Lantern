@@ -2,8 +2,6 @@
 #macro ACTION_MENU_START_OFFSET 7
 #macro PROMP "\n[Enter]"
 
-global.isAudioUnlocked = false;
-
 global.actions =
 {
     attack:
