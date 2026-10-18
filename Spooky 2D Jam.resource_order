@@ -19,6 +19,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_boss_fight","order":3,"path":"objects/obj_boss_fight/obj_boss_fight.yy",},
+    {"name":"obj_bowl_tapping","order":11,"path":"objects/obj_bowl_tapping/obj_bowl_tapping.yy",},
     {"name":"obj_draw_boxes","order":1,"path":"objects/obj_draw_boxes/obj_draw_boxes.yy",},
     {"name":"obj_draw_messages","order":2,"path":"objects/obj_draw_messages/obj_draw_messages.yy",},
     {"name":"obj_ending","order":9,"path":"objects/obj_ending/obj_ending.yy",},
@@ -32,6 +33,7 @@
     {"name":"BossFightHelpers","order":2,"path":"scripts/BossFightHelpers/BossFightHelpers.yy",},
     {"name":"Init","order":1,"path":"scripts/Init/Init.yy",},
     {"name":"UIHelpers","order":3,"path":"scripts/UIHelpers/UIHelpers.yy",},
+    {"name":"spr_bowl_tapping_1","order":1,"path":"sprites/spr_bowl_tapping_1/spr_bowl_tapping_1.yy",},
     {"name":"spr_box","order":2,"path":"sprites/spr_box/spr_box.yy",},
     {"name":"spr_campfire","order":3,"path":"sprites/spr_campfire/spr_campfire.yy",},
     {"name":"spr_candy_bag","order":7,"path":"sprites/spr_candy_bag/spr_candy_bag.yy",},
@@ -52,6 +54,5 @@
     {"name":"spr_sun_happy","order":1,"path":"sprites/spr_sun_happy/spr_sun_happy.yy",},
     {"name":"spr_tent_1","order":1,"path":"sprites/spr_tent_1/spr_tent_1.yy",},
     {"name":"spr_tree","order":2,"path":"sprites/spr_tree/spr_tree.yy",},
-    {"name":"srpr_bowl_tapping_1","order":1,"path":"sprites/srpr_bowl_tapping_1/srpr_bowl_tapping_1.yy",},
   ],
 }

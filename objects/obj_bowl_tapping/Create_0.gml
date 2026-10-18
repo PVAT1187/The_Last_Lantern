@@ -1,0 +1,122 @@
+// message box
+messageBox = instance_create_layer(
+    room_width / 2 - ACTION_MENU_START_OFFSET, 
+    room_height / 2 - ACTION_MENU_START_OFFSET, 
+    "Instances", 
+    obj_draw_messages
+);
+
+// boxes
+boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
+
+// bowl
+bowlScale = 3;
+bowlStartX = 225;
+
+bowlTapTimeRemaining = 0;
+bowlTapTimeFrames = 5;
+
+// timer
+timerTextStartPosition = 5;
+
+// error
+errorTextStartX = 5;
+errorTextStartY = 30;
+
+// key list
+keyListStartX = 140;
+keyListStartY = 275;
+keyListSpacing = 50;
+keys = [ "A", "S", "D", "W" ];
+
+keyList = [];
+gameTimeFrames = 30 * game_get_speed(gamespeed_fps);
+totalError = 0;
+waitTimeRemaining = 0;
+waitTimeFrames = 90;
+
+function Pause()
+{
+    messageBox.message = "Get ready...";
+    waitTimeRemaining = waitTimeFrames;
+    state = CountDown;
+}
+
+function CountDown()
+{
+    --waitTimeRemaining;
+    if (waitTimeRemaining == 0)
+    {
+        messageBox.message = "Press the keys shown on screen in order!";
+        state = Shuffle;
+    }
+}
+
+function Shuffle()
+{
+    keyList = [];
+
+    var numOfKeys = array_length(keys);
+    for (var i = 0; i < numOfKeys; ++i)
+    {
+        var randomKeyIndex = irandom(numOfKeys - 1);
+        array_push(keyList, keys[randomKeyIndex]);
+    }
+
+    state = Play;
+}
+
+function Play()
+{
+    if (bowlTapTimeRemaining > 0)
+    {
+        --bowlTapTimeRemaining;
+    }
+    
+    --gameTimeFrames;
+    if (gameTimeFrames == 0)
+    {
+        messageBox.message = "Time's up!";
+        waitTimeRemaining = waitTimeFrames;
+        state = TimeUp;
+        return;
+    }
+
+    var numOfKeys = array_length(keys);
+    for (var i = 0; i < numOfKeys; ++i)
+    {
+        if (array_length(keyList) > 0 && keyboard_check_pressed(ord(keys[i])))
+        {
+            if (keys[i] == keyList[0])
+            {
+                bowlTapTimeRemaining = bowlTapTimeFrames;
+                array_delete(keyList, 0, 1);
+            }
+            else 
+            {
+                ++totalError;
+            }
+        }
+    }
+
+    if (array_length(keyList) == 0)
+    {
+        state = Shuffle;
+    }
+}
+
+function TimeUp()
+{
+    --waitTimeRemaining;
+    if (waitTimeRemaining == 0)
+    {
+        state = Finish;
+    }
+}
+
+function Finish()
+{
+    room_goto(rm_starting_scene);
+}
+
+state = Pause;

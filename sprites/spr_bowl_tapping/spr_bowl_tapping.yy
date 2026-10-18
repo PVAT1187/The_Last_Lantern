@@ -1,18 +1,18 @@
 {
   "$GMSprite":"v2",
-  "%Name":"srpr_bowl_tapping_1",
+  "%Name":"spr_bowl_tapping",
   "bboxMode":0,
-  "bbox_bottom":54,
-  "bbox_left":1,
-  "bbox_right":61,
-  "bbox_top":34,
+  "bbox_bottom":53,
+  "bbox_left":2,
+  "bbox_right":62,
+  "bbox_top":23,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"c732d5fd-67b2-4e2b-a3cf-f388229fb2d8","name":"c732d5fd-67b2-4e2b-a3cf-f388229fb2d8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"125fc563-0376-40dd-98b7-4dc73a141d03","name":"125fc563-0376-40dd-98b7-4dc73a141d03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -21,7 +21,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"4d4f56aa-17e6-41f8-9233-3095d6a5096d","blendMode":0,"displayName":"default","isLocked":false,"name":"4d4f56aa-17e6-41f8-9233-3095d6a5096d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"srpr_bowl_tapping_1",
+  "name":"spr_bowl_tapping",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"srpr_bowl_tapping",
+    "%Name":"spr_bowl_tapping",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"srpr_bowl_tapping",
+    "name":"spr_bowl_tapping",
     "playback":1,
     "playbackSpeed":15.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c732d5fd-67b2-4e2b-a3cf-f388229fb2d8","path":"sprites/srpr_bowl_tapping_1/srpr_bowl_tapping_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4087129b-9168-46de-a06d-c643f84ea5e6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"125fc563-0376-40dd-98b7-4dc73a141d03","path":"sprites/spr_bowl_tapping/spr_bowl_tapping.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"36cdddb9-d1d4-4491-8a26-bd29471706a9","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
