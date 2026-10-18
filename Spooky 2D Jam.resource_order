@@ -2,6 +2,7 @@
   "FolderOrderSettings":[
     {"name":"Font","order":21,"path":"folders/Font.yy",},
     {"name":"Objects","order":18,"path":"folders/Objects.yy",},
+    {"name":"black_cat","order":13,"path":"folders/Objects/black_cat.yy",},
     {"name":"reusable_objects","order":8,"path":"folders/Objects/reusable_objects.yy",},
     {"name":"Rooms","order":16,"path":"folders/Rooms.yy",},
     {"name":"mini_games","order":4,"path":"folders/Rooms/mini_games.yy",},
@@ -18,6 +19,7 @@
     {"name":"tents","order":1,"path":"folders/Sprites/starting_scene/tents.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_black_cat_1","order":1,"path":"objects/obj_black_cat_1/obj_black_cat_1.yy",},
     {"name":"obj_boss_fight","order":3,"path":"objects/obj_boss_fight/obj_boss_fight.yy",},
     {"name":"obj_bowl_tapping","order":11,"path":"objects/obj_bowl_tapping/obj_bowl_tapping.yy",},
     {"name":"obj_draw_boxes","order":1,"path":"objects/obj_draw_boxes/obj_draw_boxes.yy",},
@@ -30,6 +32,7 @@
     {"name":"rm_ouija_board","order":2,"path":"rooms/rm_ouija_board/rm_ouija_board.yy",},
     {"name":"rm_path_randomization","order":1,"path":"rooms/rm_path_randomization/rm_path_randomization.yy",},
     {"name":"rm_starting_scene","order":2,"path":"rooms/rm_starting_scene/rm_starting_scene.yy",},
+    {"name":"AddCandies","order":4,"path":"scripts/AddCandies/AddCandies.yy",},
     {"name":"BossFightHelpers","order":2,"path":"scripts/BossFightHelpers/BossFightHelpers.yy",},
     {"name":"Init","order":1,"path":"scripts/Init/Init.yy",},
     {"name":"UIHelpers","order":3,"path":"scripts/UIHelpers/UIHelpers.yy",},

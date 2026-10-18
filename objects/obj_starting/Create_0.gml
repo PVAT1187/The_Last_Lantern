@@ -15,8 +15,8 @@ actionMenu = instance_create_layer(
 actionMenu.actions =
 [
     "BOWL TAPPING",
-    "BLACK CAT",
-    "OUIJA BOARD"
+    //"BLACK CAT",
+    //"OUIJA BOARD"
 ];
 
 // message box
@@ -38,24 +38,26 @@ function SelectGame()
     var gameKey = string_replace_all(string_lower(actionMenu.actions[actionMenu.selectedActionIndex]), " ", "_");
     var game = variable_struct_get(global.minigames, gameKey);
     
-    if (game.isPlayed)
+    // Todo: work on other minigames
+    
+    /*if (game.isPlayed)
     {
         messageBox.message = "You already played this game.";
     }
     else 
-    {
+    {*/
         messageBox.message = string(game.description);
-    }
+    //}
     
     if (actionMenu.isActionChosen)
     {
         actionMenu.isActionChosen = false;
         
-        if (!game.isPlayed)
-        {
-            game.isPlayed = true;
+        //if (!game.isPlayed)
+        //{
+            //game.isPlayed = true;
             room_goto(game.room);
-        }
+        //}
     }
 }
 

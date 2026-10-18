@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Font","folderPath":"folders/Font.yy","name":"Font","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"black_cat","folderPath":"folders/Objects/black_cat.yy","name":"black_cat","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"reusable_objects","folderPath":"folders/Objects/reusable_objects.yy","name":"reusable_objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"mini_games","folderPath":"folders/Rooms/mini_games.yy","name":"mini_games","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -41,6 +42,7 @@
   "resources":[
     {"id":{"name":"fn_m6x11","path":"fonts/fn_m6x11/fn_m6x11.yy",},},
     {"id":{"name":"obj_action_menu","path":"objects/obj_action_menu/obj_action_menu.yy",},},
+    {"id":{"name":"obj_black_cat_1","path":"objects/obj_black_cat_1/obj_black_cat_1.yy",},},
     {"id":{"name":"obj_black_cat","path":"objects/obj_black_cat/obj_black_cat.yy",},},
     {"id":{"name":"obj_boss_fight","path":"objects/obj_boss_fight/obj_boss_fight.yy",},},
     {"id":{"name":"obj_bowl_tapping","path":"objects/obj_bowl_tapping/obj_bowl_tapping.yy",},},
@@ -56,6 +58,7 @@
     {"id":{"name":"rm_ouija_board","path":"rooms/rm_ouija_board/rm_ouija_board.yy",},},
     {"id":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
     {"id":{"name":"rm_starting_scene","path":"rooms/rm_starting_scene/rm_starting_scene.yy",},},
+    {"id":{"name":"AddCandies","path":"scripts/AddCandies/AddCandies.yy",},},
     {"id":{"name":"BossFightHelpers","path":"scripts/BossFightHelpers/BossFightHelpers.yy",},},
     {"id":{"name":"GameData","path":"scripts/GameData/GameData.yy",},},
     {"id":{"name":"Init","path":"scripts/Init/Init.yy",},},
@@ -93,9 +96,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_bowl_tapping","path":"rooms/rm_bowl_tapping/rm_bowl_tapping.yy",},},
     {"roomId":{"name":"rm_black_cat","path":"rooms/rm_black_cat/rm_black_cat.yy",},},
     {"roomId":{"name":"rm_starting_scene","path":"rooms/rm_starting_scene/rm_starting_scene.yy",},},
+    {"roomId":{"name":"rm_bowl_tapping","path":"rooms/rm_bowl_tapping/rm_bowl_tapping.yy",},},
     {"roomId":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
     {"roomId":{"name":"rm_ending_scene","path":"rooms/rm_ending_scene/rm_ending_scene.yy",},},
     {"roomId":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},

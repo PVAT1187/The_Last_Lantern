@@ -5,7 +5,7 @@ if (mouse_check_button_pressed(mb_left))
     var spriteTopBound = y - sprite_height / 2;
     var spriteBottomBound = y + sprite_height / 2;
     
-    if (mouse.x >= spriteLeftBound && mouse_x <= spriteRightBound && mouse_y >= spriteTopBound && mouse_y <= spriteBottomBound)
+    if (mouse_x >= spriteLeftBound && mouse_x <= spriteRightBound && mouse_y >= spriteTopBound && mouse_y <= spriteBottomBound)
     {
         show_message("black cat found!");
     }

@@ -8,8 +8,8 @@
   "name":"obj_black_cat",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"black_cat",
+    "path":"folders/Objects/black_cat.yy",
   },
   "parentObjectId":null,
   "persistent":false,
