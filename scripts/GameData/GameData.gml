@@ -2,6 +2,8 @@
 #macro ACTION_MENU_START_OFFSET 7
 #macro PROMP "\n[Enter]"
 
+global.isAudioUnlocked = false;
+
 global.actions =
 {
     attack:
@@ -100,7 +102,7 @@ global.bosses =
         strength: 10,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
-        candyValue: 5,
+        candyValue: 8,
         sound: snd_8bit_unknown_planet,
         isDefended: false,
         isDefeated: false,
@@ -137,10 +139,10 @@ global.bosses =
         name: "Grimble",
         hp: 50,
         hpMax: 50,
-        strength: 15,
+        strength: 14,
         sprites: { idle: spr_scarecrow_idle, attack: spr_scarecrow_attack, hit: spr_scarecrow_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
-        candyValue: 15,
+        candyValue: 12,
         sound: snd_10__jester_theme,
         isDefended: false,
         isDefeated: false,

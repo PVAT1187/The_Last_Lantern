@@ -44,6 +44,7 @@
     {"name":"BossFightHelpers","order":1,"path":"scripts/BossFightHelpers/BossFightHelpers.yy",},
     {"name":"GameData","order":4,"path":"scripts/GameData/GameData.yy",},
     {"name":"MinigameHelpers","order":3,"path":"scripts/MinigameHelpers/MinigameHelpers.yy",},
+    {"name":"RestartGame","order":5,"path":"scripts/RestartGame/RestartGame.yy",},
     {"name":"UIHelpers","order":2,"path":"scripts/UIHelpers/UIHelpers.yy",},
     {"name":"snd_8bit_unknown_planet","order":1,"path":"sounds/snd_8bit_unknown_planet/snd_8bit_unknown_planet.yy",},
     {"name":"snd_bittersweet_ending","order":5,"path":"sounds/snd_bittersweet_ending/snd_bittersweet_ending.yy",},

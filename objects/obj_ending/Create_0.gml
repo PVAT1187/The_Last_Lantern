@@ -135,7 +135,8 @@ function TryAgain()
 {
     if (actionMenu.isActionChosen)
     {
-        game_restart();
+        RestartGame();
+        room_goto(rm_starting_scene);
     }
 }
 

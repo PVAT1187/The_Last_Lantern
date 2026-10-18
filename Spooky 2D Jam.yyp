@@ -71,6 +71,7 @@
     {"id":{"name":"BossFightHelpers","path":"scripts/BossFightHelpers/BossFightHelpers.yy",},},
     {"id":{"name":"GameData","path":"scripts/GameData/GameData.yy",},},
     {"id":{"name":"MinigameHelpers","path":"scripts/MinigameHelpers/MinigameHelpers.yy",},},
+    {"id":{"name":"RestartGame","path":"scripts/RestartGame/RestartGame.yy",},},
     {"id":{"name":"UIHelpers","path":"scripts/UIHelpers/UIHelpers.yy",},},
     {"id":{"name":"snd_10__jester_theme","path":"sounds/snd_10__jester_theme/snd_10__jester_theme.yy",},},
     {"id":{"name":"snd_14__i_am_not_clumsy","path":"sounds/snd_14__i_am_not_clumsy/snd_14__i_am_not_clumsy.yy",},},
