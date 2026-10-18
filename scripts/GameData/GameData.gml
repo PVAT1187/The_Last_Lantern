@@ -102,7 +102,7 @@ global.bosses =
         strength: 10,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
-        candyValue: 8,
+        candyValue: 6,
         sound: snd_8bit_unknown_planet,
         isDefended: false,
         isDefeated: false,
@@ -122,7 +122,7 @@ global.bosses =
         strength: 12,
         sprites: { idle: spr_pumpkin_idle, attack: spr_pumpkin_attack, hit: spr_pumpkin_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
-        candyValue: 10,
+        candyValue: 8,
         sound: snd_Memoraphile___Spooky_Dungeon,
         isDefended: false,
         isDefeated: false,
@@ -142,7 +142,7 @@ global.bosses =
         strength: 14,
         sprites: { idle: spr_scarecrow_idle, attack: spr_scarecrow_attack, hit: spr_scarecrow_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
-        candyValue: 12,
+        candyValue: 10,
         sound: snd_10__jester_theme,
         isDefended: false,
         isDefeated: false,

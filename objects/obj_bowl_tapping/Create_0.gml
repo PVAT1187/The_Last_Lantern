@@ -86,7 +86,7 @@ function Play()
     {
         keyList = [];
         
-        candiesEarned = max(5, floor(totalCorrectMatches / array_length(keys)) - floor(totalErrorMatches / 2));
+        candiesEarned = max(10, floor(totalCorrectMatches / array_length(keys)) - floor(totalErrorMatches / 2));
         candiesEarned = AddCandies(candiesEarned);
         
         messageBox.message = "Time's up!" + PROMP;

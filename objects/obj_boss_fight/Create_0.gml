@@ -194,7 +194,7 @@ function CheckVictory()
 {
     if (boss.hp <= 0)
     {
-        player.candy += boss.candyValue;
+        player.candy = min(player.candy + boss.candyValue, player.candyMax);
         state = EndBossFight;
     }
     else if (player.hp <= 0 || player.isFled || player.isSpared)

@@ -7,7 +7,7 @@ function RestartGame()
     player.isFled = false;
     player.isSpared = false;
     player.isDefended = false;
-    player.candiesDropped = 0;
+    player.candyDropped = 0;
     
     var bosses = variable_struct_get_names(global.bosses);
     var numOfBosses = array_length(bosses);
