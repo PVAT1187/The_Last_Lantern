@@ -1,0 +1,1 @@
+audio_play_sound(snd_C64___Banks___Alas, 0, true);

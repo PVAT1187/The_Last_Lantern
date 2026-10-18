@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"C64___Banks___Alas",
+  "%Name":"snd_C64___Banks___Alas",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":80.99701,
   "exportDir":"",
-  "name":"C64___Banks___Alas",
+  "name":"snd_C64___Banks___Alas",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"C64___Banks___Alas.ogg",
+  "soundFile":"snd_C64___Banks___Alas.ogg",
   "volume":0.5,
 }

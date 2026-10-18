@@ -52,6 +52,29 @@ pickedCandyShown = false;
 waitTimeRemaining = 0;
 waitTimeFrames = 90;
 
+isPathIntroPlayed = false;
+isPathIntroFinishedPlaying = false;
+
+function PathIntro()
+{
+    actionMenu.isActive = false;
+    
+    if (!isPathIntroPlayed)
+    {
+        isPathIntroPlayed = true;
+        
+        messageBox.message = "You have reached the paths";
+        waitTimeRemaining = waitTimeFrames + offset;
+    }
+    
+    --waitTimeRemaining;
+    if (waitTimeRemaining == 0)
+    {
+        isPathIntroFinishedPlaying = true;
+        state = RandomizePath;
+    }
+}
+
 function RandomizePath()
 {
     actionMenu.isActive = true;
@@ -101,4 +124,4 @@ function GoToPath()
     }
 }
 
-state = RandomizePath;
+state = PathIntro;

@@ -1,8 +1,8 @@
-groundScale = 3;
-
-leftGroundStartX = 5;
-middleGroundStartX = 200;
-rightGroundStartX = 390;
+if (IsAllMinigamesPlayed())
+{
+    room_goto(rm_dark_figure_encounter);
+    exit;
+}
 
 // action menu
 offset = 25;
@@ -30,10 +30,34 @@ messageBox = instance_create_layer(
 // boxes
 boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
 
-if (IsAllMinigamesPlayed())
+dialogue =
+[
+    "You're late! The festival is nearly over.",
+    "Most of the stalls are already packing up...",
+    "(Mom and I never missed a single festival.)",
+    "Hurry up! There's still time for one last game."
+]
+
+messageIndex = 0;
+isStartingIntroPlayed = false;
+
+function StartingIntro()
 {
-    room_goto(rm_dark_figure_encounter);
-    exit;
+    actionMenu.isActive = false;
+    
+    if (keyboard_check_pressed(vk_enter))
+    {
+        ++messageIndex;
+        
+        if (messageIndex >= array_length(dialogue))
+        {
+            isStartingIntroPlayed = true;
+            state = SelectGame;
+            return;
+        }
+    }
+    
+    messageBox.message = dialogue[messageIndex];
 }
 
 // state functions
@@ -67,4 +91,12 @@ function SelectGame()
     }
 }
 
-state = SelectGame;
+if (isStartingIntroPlayed)
+{
+    state = SelectGame;
+}
+else
+{
+    messageBox.message = dialogue[0];
+    state = StartingIntro;
+}

@@ -28,13 +28,15 @@ keyListStartX = 140;
 keyListStartY = 275;
 keyListSpacing = 50;
 
+minigamesDuration = 5;
+
 keys = [ "A", "S", "D", "W" ];
 
 keyList = [];
 
-gameTimeFrames = 30 * game_get_speed(gamespeed_fps);
+gameTimeFrames = minigamesDuration * game_get_speed(gamespeed_fps);
 waitTimeRemaining = 0;
-waitTimeFrames = 120;
+waitTimeFrames = 240;
 
 totalErrorMatches = 0;
 totalCorrectMatches = 0;
@@ -42,7 +44,9 @@ candiesEarned = 0;
 
 function Pause()
 {
-    messageBox.message = "Get ready...";
+    messageBox.message = "Get ready..."
+        + "\n(This reminds me so much of mother."
+        + "\nShe used to ring this bowl every year. She said it called the good luck.)";
     waitTimeRemaining = waitTimeFrames;
     state = CountDown;
 }
@@ -123,9 +127,9 @@ function TimeUp()
         --waitTimeRemaining;
         if (waitTimeRemaining == 0)
         {
-            messageBox.message = "You earned " 
-                + string(candiesEarned) + " candies!" 
-                + "\n(Press Enter to go back)";
+            messageBox.message = "You earned " + string(candiesEarned) + " candies!"
+                + "\n(She always saved the first candy of the night for me.)"
+                + "\n\n(Press Enter to go back)";
         }
         
         return;
