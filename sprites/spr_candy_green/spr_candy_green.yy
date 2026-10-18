@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"candies",
-    "path":"folders/Sprites/candies.yy",
+    "path":"folders/Sprites/path_scene/candies.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

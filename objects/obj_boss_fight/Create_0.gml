@@ -40,6 +40,9 @@ messageBox = instance_create_layer(
     obj_draw_messages
 );
 
+// boxes
+boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
+
 // state functions
 player = global.player.player;
 boss = variable_clone(global.bosses.dracula);

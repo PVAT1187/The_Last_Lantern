@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"trees",
-    "path":"folders/Sprites/trees.yy",
+    "name":"starting_scene",
+    "path":"folders/Sprites/starting_scene.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"ending",
-    "path":"folders/Sprites/ending.yy",
+    "name":"ending_scene",
+    "path":"folders/Sprites/ending_scene.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

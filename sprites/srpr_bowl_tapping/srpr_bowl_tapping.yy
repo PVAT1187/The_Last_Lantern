@@ -2,8 +2,8 @@
   "$GMSprite":"v2",
   "%Name":"srpr_bowl_tapping",
   "bboxMode":0,
-  "bbox_bottom":54,
-  "bbox_left":1,
+  "bbox_bottom":53,
+  "bbox_left":2,
   "bbox_right":62,
   "bbox_top":23,
   "collisionKind":1,
@@ -13,7 +13,6 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"125fc563-0376-40dd-98b7-4dc73a141d03","name":"125fc563-0376-40dd-98b7-4dc73a141d03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"c732d5fd-67b2-4e2b-a3cf-f388229fb2d8","name":"c732d5fd-67b2-4e2b-a3cf-f388229fb2d8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -26,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"bowl_tapping",
+    "path":"folders/Sprites/minigames_scene/bowl_tapping.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -50,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -72,9 +71,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"125fc563-0376-40dd-98b7-4dc73a141d03","path":"sprites/srpr_bowl_tapping/srpr_bowl_tapping.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"36cdddb9-d1d4-4491-8a26-bd29471706a9","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c732d5fd-67b2-4e2b-a3cf-f388229fb2d8","path":"sprites/srpr_bowl_tapping/srpr_bowl_tapping.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4087129b-9168-46de-a06d-c643f84ea5e6","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

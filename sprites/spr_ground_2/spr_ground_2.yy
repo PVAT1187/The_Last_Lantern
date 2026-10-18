@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"grounds",
-    "path":"folders/Sprites/grounds.yy",
+    "path":"folders/Sprites/starting_scene/grounds.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

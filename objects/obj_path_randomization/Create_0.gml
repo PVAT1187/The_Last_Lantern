@@ -1,6 +1,6 @@
 // paths
 pathScale = 3;
-pathStartY = 10;
+pathStartY = 5;
 
 leftPathStartX = 10;
 straightPathStartX = 225;
@@ -34,6 +34,9 @@ messageBox = instance_create_layer(
     "Instances", 
     obj_draw_messages
 );
+
+// boxes
+boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
 
 // candy
 candies =
