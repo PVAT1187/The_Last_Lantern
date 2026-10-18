@@ -75,12 +75,13 @@ global.player =
         name: "Player",
         hp: 100,
         hpMax: 100,
-        candy: 20,
+        candy: 0,
         candyMax: 20,
-        strength: 5,
+        strength: 10,
         isDefended: false,
         isFled: false,
         isSpared: false,
+        isLost: false,
         actions: [global.actions.attack, global.actions.defense, global.actions.flee, global.actions.plea]
     }
 }
@@ -92,11 +93,13 @@ global.bosses =
         name: "Dracula",
         hp: 100,
         hpMax: 100,
-        strength: 10,
+        strength: 12,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
         candyValue: 5,
+        sound: snd_8bit_unknown_planet,
         isDefended: false,
+        isDefeated: false,
         AIScript: function()
         {
             var randomActionIndex = irandom(array_length(actions) - 1);
@@ -114,7 +117,9 @@ global.bosses =
         sprites: { idle: spr_pumpkin_idle, attack: spr_pumpkin_attack, hit: spr_pumpkin_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
         candyValue: 10,
+        sound: snd_Memoraphile___Spooky_Dungeon,
         isDefended: false,
+        isDefeated: false,
         AIScript: function()
         {
             var randomActionIndex = irandom(array_length(actions) - 1);
@@ -132,7 +137,9 @@ global.bosses =
         sprites: { idle: spr_scarecrow_idle, attack: spr_scarecrow_attack, hit: spr_scarecrow_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
         candyValue: 15,
+        sound: snd_10__jester_theme,
         isDefended: false,
+        isDefeated: false,
         AIScript: function()
         {
             var randomActionIndex = irandom(array_length(actions) - 1);
@@ -157,7 +164,7 @@ global.minigames =
         name: "BLACK CAT",
         description: "Find the black cat!",
         room: rm_black_cat,
-        isPlayed: false
+        isPlayed: true
     },
     
     ouija_board:
@@ -165,6 +172,6 @@ global.minigames =
         name: "OUIJA BOARD",
         description: "Remember the keys!",
         room: rm_ouija_board,
-        isPlayed: false
+        isPlayed: true
     }
 }

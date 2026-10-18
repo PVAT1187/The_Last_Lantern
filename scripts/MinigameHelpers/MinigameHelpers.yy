@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Init",
+  "%Name":"MinigameHelpers",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Init",
+  "name":"MinigameHelpers",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

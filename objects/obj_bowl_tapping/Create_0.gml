@@ -27,13 +27,18 @@ errorTextStartY = 30;
 keyListStartX = 140;
 keyListStartY = 275;
 keyListSpacing = 50;
+
 keys = [ "A", "S", "D", "W" ];
 
 keyList = [];
+
 gameTimeFrames = 30 * game_get_speed(gamespeed_fps);
-totalError = 0;
 waitTimeRemaining = 0;
 waitTimeFrames = 120;
+
+totalErrorMatches = 0;
+totalCorrectMatches = 0;
+candiesEarned = 0;
 
 function Pause()
 {
@@ -78,6 +83,9 @@ function Play()
     {
         keyList = [];
         
+        candiesEarned = max(5, floor(totalCorrectMatches / array_length(keys)) - floor(totalErrorMatches / 2));
+        candiesEarned = AddCandies(candiesEarned);
+        
         messageBox.message = "Time's up!";
         waitTimeRemaining = waitTimeFrames;
         state = TimeUp;
@@ -91,12 +99,13 @@ function Play()
         {
             if (keys[i] == keyList[0])
             {
+                ++totalCorrectMatches;
                 bowlTapTimeRemaining = bowlTapTimeFrames;
                 array_delete(keyList, 0, 1);
             }
             else 
             {
-                ++totalError;
+                ++totalErrorMatches;
             }
         }
     }
@@ -114,7 +123,9 @@ function TimeUp()
         --waitTimeRemaining;
         if (waitTimeRemaining == 0)
         {
-            messageBox.message = "Press Enter to go back."    
+            messageBox.message = "You earned " 
+                + string(candiesEarned) + " candies!" 
+                + "\n(Press Enter to go back)";
         }
         
         return;
@@ -128,6 +139,7 @@ function TimeUp()
 
 function Finish()
 {
+    global.minigames.bowl_tapping.isPlayed = true;
     room_goto(rm_starting_scene);
 }
 

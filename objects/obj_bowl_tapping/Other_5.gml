@@ -1,0 +1,1 @@
+audio_stop_sound(snd_14__i_am_not_clumsy);

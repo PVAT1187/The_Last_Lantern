@@ -1,0 +1,1 @@
+audio_play_sound(boss.sound, 0, true);

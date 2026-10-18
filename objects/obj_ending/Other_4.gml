@@ -1,0 +1,1 @@
+audio_play_sound(endings[endingIndex].sound, 0, true);

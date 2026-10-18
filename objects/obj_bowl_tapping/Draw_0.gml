@@ -28,4 +28,4 @@ var gameTimeRemaining = max(0, ceil(gameTimeFrames / game_get_speed(gamespeed_fp
 draw_text(timerTextStartPosition, timerTextStartPosition, "Time: " + string(gameTimeRemaining));
 
 // error
-draw_text(errorTextStartX, errorTextStartY, "Error: " + string(totalError));
+draw_text(errorTextStartX, errorTextStartY, "Error: " + string(totalErrorMatches));

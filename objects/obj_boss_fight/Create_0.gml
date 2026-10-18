@@ -47,9 +47,15 @@ boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
 player = global.player.player;
 
 // random boss
-var bosses = variable_struct_get_names(global.bosses);
-var randomBossIndex = irandom(array_length(bosses) - 1); 
-var chosenBoss = variable_struct_get(global.bosses, bosses[randomBossIndex]);
+var availableBosses = GetAvailableBosses();
+
+if (array_length(availableBosses) == 0)
+{
+    room_goto(rm_ending_scene);
+    exit;
+}
+
+chosenBoss = availableBosses[irandom(array_length(availableBosses) - 1)];
 boss = variable_clone(chosenBoss);
 
 combatants = [player, boss];
@@ -93,6 +99,13 @@ function SelectAction()
     
     if (currentCombatant == player)
     {
+        if (player.candy == 0)
+        {
+            player.hp = 0;
+            state = EndBossFight;
+            return;
+        }
+        
         actionMenu.isActive = true;
         
         var actionKey = string_lower(actionMenu.actions[actionMenu.selectedActionIndex]);
@@ -136,7 +149,7 @@ function BeginAction(user, action, target)
     
     if (user == player)
     {
-        player.candy -= action.candyCost;
+        player.candy = max(0, player.candy - action.candyCost);
     }
     
     damageDealt = action.func(user, target);
@@ -220,6 +233,10 @@ function EndBossFight()
         {
             messageBox.message = boss.name + " lets you go??? You are lucky, child, but it only happens once.";
         }
+        else if (player.candy == 0)
+        {
+            messageBox.message = "No candies left... Your memory about her fades away.";
+        }
         else
         {
             messageBox.message = "You lost... Say goodbye to your loved one, heheheh";
@@ -229,9 +246,39 @@ function EndBossFight()
     }
     
     --waitTimeRemaining;
-    if (waitTimeRemaining)
+    if (waitTimeRemaining == 0)
     {
-        room_goto(rm_path_randomization);
+        if (player.hp <= 0)
+        {
+            player.isLost = true;
+            room_goto(rm_ending_scene);
+        }
+        else 
+        {
+            if (boss.hp <= 0)
+            {
+                chosenBoss.isDefeated = true;
+            }
+            else if (player.isSpared)
+            {
+                chosenBoss.isDefeated = true;
+            }
+            else if (player.isFled)
+            {
+                chosenBoss.isDefeated = false;
+            }
+            
+            
+            var availableBosses = GetAvailableBosses();
+            if (array_length(availableBosses) > 0)
+            {
+                room_goto(rm_path_randomization);
+            }
+            else 
+            {
+                room_goto(rm_ending_scene);
+            }
+        }
     }
 }
 

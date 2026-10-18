@@ -1,0 +1,1 @@
+audio_stop_sound(endings[endingIndex].sound);

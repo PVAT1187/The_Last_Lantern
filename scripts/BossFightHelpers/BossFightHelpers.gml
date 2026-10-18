@@ -16,3 +16,22 @@ function BossFightHPModifier(target, amount)
     
     return amountHPChanged;
 }
+
+function GetAvailableBosses()
+{
+    var bosses = variable_struct_get_names(global.bosses);
+    var availableBosses = [];
+    
+    var numOfBosses = array_length(bosses);
+    for (var i = 0; i < numOfBosses; ++i)
+    {
+        var currentBoss = variable_struct_get(global.bosses, bosses[i]);
+        
+        if (!currentBoss.isDefeated)
+        {
+            array_push(availableBosses, currentBoss);
+        }
+    }
+    
+    return availableBosses;
+}

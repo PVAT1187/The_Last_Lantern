@@ -30,6 +30,12 @@ messageBox = instance_create_layer(
 // boxes
 boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
 
+if (IsAllMinigamesPlayed())
+{
+    room_goto(rm_dark_figure_encounter);
+    exit;
+}
+
 // state functions
 function SelectGame()
 {

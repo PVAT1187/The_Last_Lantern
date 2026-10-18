@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_Brahms___Vals3_synth",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":49.499138,
+  "exportDir":"",
+  "name":"snd_Brahms___Vals3_synth",
+  "parent":{
+    "name":"ending_scene",
+    "path":"folders/Sounds/ending_scene.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_Brahms___Vals3_synth.ogg",
+  "volume":0.5,
+}

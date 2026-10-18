@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snd_8bit_unknown_planet",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":3,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":68.62367,
+  "exportDir":"",
+  "name":"snd_8bit_unknown_planet",
+  "parent":{
+    "name":"boss",
+    "path":"folders/Sounds/boss.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_8bit_unknown_planet.mp3",
+  "volume":0.5,
+}

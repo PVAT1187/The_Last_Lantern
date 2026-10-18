@@ -6,9 +6,9 @@ houseStartX = 200;
 spriteScale = 1.5;
 endings = 
 [
-    { title: "happy", minNumOfCandies: 10, sprite: spr_sun_happy },
-    { title: "sad", minNumOfCandies: 5, sprite: spr_moon_bad },
-    { title: "nightmare", minNumOfCandies: 0, sprite: spr_dark_figure}
+    { title: "happy", minNumOfCandies: 10, sprite: spr_sun_happy, sound: snd_Haran},
+    { title: "sad", minNumOfCandies: 5, sprite: spr_moon_bad, sound:  snd_Brahms___Vals3_synth},
+    { title: "nightmare", minNumOfCandies: 0, sprite: spr_dark_figure, sound: snd_bittersweet_ending}
 ]
 
 // action menu
