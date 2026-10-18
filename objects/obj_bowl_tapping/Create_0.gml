@@ -33,7 +33,7 @@ keyList = [];
 gameTimeFrames = 30 * game_get_speed(gamespeed_fps);
 totalError = 0;
 waitTimeRemaining = 0;
-waitTimeFrames = 90;
+waitTimeFrames = 120;
 
 function Pause()
 {
@@ -76,6 +76,8 @@ function Play()
     --gameTimeFrames;
     if (gameTimeFrames == 0)
     {
+        keyList = [];
+        
         messageBox.message = "Time's up!";
         waitTimeRemaining = waitTimeFrames;
         state = TimeUp;
@@ -107,10 +109,20 @@ function Play()
 
 function TimeUp()
 {
-    --waitTimeRemaining;
-    if (waitTimeRemaining == 0)
+    if (waitTimeRemaining > 0)
     {
-        state = Finish;
+        --waitTimeRemaining;
+        if (waitTimeRemaining == 0)
+        {
+            messageBox.message = "Press Enter to go back."    
+        }
+        
+        return;
+    }
+    
+    if (keyboard_check_pressed(vk_enter))
+    {
+        state = Finish;   
     }
 }
 
