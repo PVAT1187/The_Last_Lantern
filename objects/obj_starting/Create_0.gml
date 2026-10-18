@@ -57,7 +57,7 @@ function StartingIntro()
         }
     }
     
-    messageBox.message = dialogue[messageIndex];
+    messageBox.message = dialogue[messageIndex] + PROMP;
 }
 
 // state functions
@@ -97,6 +97,6 @@ if (isStartingIntroPlayed)
 }
 else
 {
-    messageBox.message = dialogue[0];
+    messageBox.message = dialogue[0] + PROMP;
     state = StartingIntro;
 }

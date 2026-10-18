@@ -169,7 +169,7 @@ messageIndex = 0;
 function ShowDialogue()
 {
     var message = dialogue[messageIndex];
-    messageBox.message = message.text;
+    messageBox.message = message.text + PROMP;
     darkFigureVisible = message.isDarkFigureVisible;
     darkFigureSprite = message.sprite;
 }

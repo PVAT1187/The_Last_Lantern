@@ -81,13 +81,12 @@ function BossIntro()
     if (!isBossIntroPlayed)
     {
         isBossIntroPlayed = true;
-        messageBox.message = "You have encountered " + boss.name + "! Ready to take actions.";
-        waitTimeRemaining = waitTimeFrames + offset;
+        messageBox.message = "You have encountered " + boss.name + "! Ready to take actions." + PROMP;
     }
     
-    --waitTimeRemaining;
-    if (waitTimeRemaining == 0)
+    if (keyboard_check_pressed(vk_enter))
     {
+        actionMenu.isActionChosen = false;
         state = SelectAction;
     }
 }
@@ -235,18 +234,17 @@ function EndBossFight()
         }
         else if (player.candy == 0)
         {
-            messageBox.message = "No candies left... Your memory about her fades away.";
+            messageBox.message = "No candies left... You lost!";
         }
         else
         {
             messageBox.message = "You lost... Say goodbye to your loved one, heheheh";
         }
         
-        waitTimeRemaining = waitTimeFrames;
+        messageBox.message += PROMP;
     }
     
-    --waitTimeRemaining;
-    if (waitTimeRemaining == 0)
+    if (keyboard_check_pressed(vk_enter))
     {
         if (player.hp <= 0)
         {

@@ -1,5 +1,6 @@
 #macro FIRST_BOX_WIDTH 450
 #macro ACTION_MENU_START_OFFSET 7
+#macro PROMP "\n[Enter]"
 
 global.actions =
 {

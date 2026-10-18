@@ -63,13 +63,12 @@ function PathIntro()
     {
         isPathIntroPlayed = true;
         
-        messageBox.message = "You have reached the paths";
-        waitTimeRemaining = waitTimeFrames + offset;
+        messageBox.message = "You have reached the paths" + PROMP;
     }
     
-    --waitTimeRemaining;
-    if (waitTimeRemaining == 0)
+    if (keyboard_check_pressed(vk_enter))
     {
+        actionMenu.isActionChosen = false;
         isPathIntroFinishedPlaying = true;
         state = RandomizePath;
     }
@@ -104,12 +103,9 @@ function RevealCandyResult()
         
         var pickedCandy = candies[pickedCandyIndex];
     
-        messageBox.message = "You pulled out a " + string(pickedCandy.color) 
-        + " candy, which means you will take the " 
-        + (pickedCandy.correlatedPath) + " path";
-        
-        var offset = 30
-        waitTimeRemaining = waitTimeFrames + offset;
+        messageBox.message = "You pulled out a " + pickedCandy.color
+            + " candy, which means you will take the " 
+            + (pickedCandy.correlatedPath) + " path" + PROMP;
     
         state = GoToPath;
     }
@@ -117,11 +113,10 @@ function RevealCandyResult()
 
 function GoToPath()
 {
-    --waitTimeRemaining;
-    if (waitTimeRemaining == 0)
+    if (keyboard_check_pressed(vk_enter))
     {
-        room_goto(rm_boss_fight);        
-    }
+        room_goto(rm_boss_fight);
+    }      
 }
 
 state = PathIntro;

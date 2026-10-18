@@ -28,15 +28,13 @@ keyListStartX = 140;
 keyListStartY = 275;
 keyListSpacing = 50;
 
-minigamesDuration = 5;
+minigamesDuration = 30;
 
 keys = [ "A", "S", "D", "W" ];
 
 keyList = [];
 
 gameTimeFrames = minigamesDuration * game_get_speed(gamespeed_fps);
-waitTimeRemaining = 0;
-waitTimeFrames = 240;
 
 totalErrorMatches = 0;
 totalCorrectMatches = 0;
@@ -46,19 +44,19 @@ function Pause()
 {
     messageBox.message = "Get ready..."
         + "\n(This reminds me so much of mother."
-        + "\nShe used to ring this bowl every year. She said it called the good luck.)";
-    waitTimeRemaining = waitTimeFrames;
-    state = CountDown;
+        + "\nShe used to ring this bowl every year. She said it called the good luck.)"
+        + PROMP;
+    
+    if (keyboard_check_pressed(vk_enter))
+    {
+        state = CountDown;
+    }
 }
 
 function CountDown()
 {
-    --waitTimeRemaining;
-    if (waitTimeRemaining == 0)
-    {
-        messageBox.message = "Press the keys shown on screen in order!";
-        state = Shuffle;
-    }
+    messageBox.message = "Press the keys shown on screen in order!";
+    state = Shuffle;
 }
 
 function Shuffle()
@@ -90,8 +88,7 @@ function Play()
         candiesEarned = max(5, floor(totalCorrectMatches / array_length(keys)) - floor(totalErrorMatches / 2));
         candiesEarned = AddCandies(candiesEarned);
         
-        messageBox.message = "Time's up!";
-        waitTimeRemaining = waitTimeFrames;
+        messageBox.message = "Time's up!" + PROMP;
         state = TimeUp;
         return;
     }
@@ -122,22 +119,22 @@ function Play()
 
 function TimeUp()
 {
-    if (waitTimeRemaining > 0)
-    {
-        --waitTimeRemaining;
-        if (waitTimeRemaining == 0)
-        {
-            messageBox.message = "You earned " + string(candiesEarned) + " candies!"
-                + "\n(She always saved the first candy of the night for me.)"
-                + "\n\n(Press Enter to go back)";
-        }
-        
-        return;
-    }
-    
     if (keyboard_check_pressed(vk_enter))
     {
-        state = Finish;   
+        messageBox.message = "You earned " + string(candiesEarned) + " candies!"
+        + "\n(She always saved the first candy of the night for me.)"
+        + PROMP;
+        
+        state = RevealResult;
+    }
+           
+}
+
+function RevealResult()
+{
+    if (keyboard_check_pressed(vk_enter))
+    {
+        state = Finish;
     }
 }
 
