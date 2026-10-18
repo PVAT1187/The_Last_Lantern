@@ -63,7 +63,22 @@ function PathIntro()
     {
         isPathIntroPlayed = true;
         
-        messageBox.message = "You have reached the paths" + PROMP;
+        var player = global.player.player;
+        var message = "";
+        
+        if (player.isFled)
+        {
+            var candiesDropped = player.candyDropped;
+            message = "You escaped, but dropped " 
+                + string(dropped)
+                + ((dropped == 1) ? " candy" : " candies") + " along the way...";
+        }
+        else if (player.isSpared)
+        {
+            message = "You are spared this time...";
+        }
+        
+        messageBox.message = message + "You have reached the paths" + PROMP;
     }
     
     if (keyboard_check_pressed(vk_enter))

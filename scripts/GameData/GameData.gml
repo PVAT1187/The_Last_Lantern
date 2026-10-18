@@ -23,8 +23,8 @@ global.actions =
     {
         name: "DEFENSE",
         description1: "{0} defends!",
-        description2: "Costs 2 candies.",
-        candyCost: 2,
+        description2: "Costs 1 candy.",
+        candyCost: 1,
         animation: "idle",
         func: function(user, target)
         {
@@ -45,7 +45,9 @@ global.actions =
             if (user.hp <= user.hpMax / 2 && random(1) < 0.5)
             {
                 user.isFled = true;
-                user.candy = max(0, user.candy - irandom_range(1, global.actions.flee.candyCost));
+                var candiesDropped = min(user.candy, irandom_range(1, global.actions.flee.candyCost))
+                user.candy -= candiesDropped;
+                user.candyDropped = candiesDropped;
             }
             return 0;
         }
@@ -78,7 +80,8 @@ global.player =
         hpMax: 100,
         candy: 0,
         candyMax: 20,
-        strength: 10,
+        candyDropped: 0,
+        strength: 5,
         isDefended: false,
         isFled: false,
         isSpared: false,
@@ -92,9 +95,9 @@ global.bosses =
     dracula:
     {
         name: "Dracula",
-        hp: 100,
-        hpMax: 100,
-        strength: 12,
+        hp: 30,
+        hpMax: 30,
+        strength: 10,
         sprites: { idle: spr_dracula_idle, attack: spr_dracula_attack, hit: spr_dracula_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
         candyValue: 5,
@@ -112,9 +115,9 @@ global.bosses =
     pumpkin:
     {
         name: "Hollow Reaper",
-        hp: 100,
-        hpMax: 100,
-        strength: 13,
+        hp: 40,
+        hpMax: 40,
+        strength: 12,
         sprites: { idle: spr_pumpkin_idle, attack: spr_pumpkin_attack, hit: spr_pumpkin_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
         candyValue: 10,
@@ -132,8 +135,8 @@ global.bosses =
     scarecrow:
     {
         name: "Grimble",
-        hp: 100,
-        hpMax: 100,
+        hp: 50,
+        hpMax: 50,
         strength: 15,
         sprites: { idle: spr_scarecrow_idle, attack: spr_scarecrow_attack, hit: spr_scarecrow_hit},
         actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later

@@ -123,9 +123,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_starting_scene","path":"rooms/rm_starting_scene/rm_starting_scene.yy",},},
+    {"roomId":{"name":"rm_bowl_tapping","path":"rooms/rm_bowl_tapping/rm_bowl_tapping.yy",},},
     {"roomId":{"name":"rm_ending_scene","path":"rooms/rm_ending_scene/rm_ending_scene.yy",},},
     {"roomId":{"name":"rm_path_randomization","path":"rooms/rm_path_randomization/rm_path_randomization.yy",},},
-    {"roomId":{"name":"rm_bowl_tapping","path":"rooms/rm_bowl_tapping/rm_bowl_tapping.yy",},},
     {"roomId":{"name":"rm_boss_fight","path":"rooms/rm_boss_fight/rm_boss_fight.yy",},},
     {"roomId":{"name":"rm_dark_figure_encounter","path":"rooms/rm_dark_figure_encounter/rm_dark_figure_encounter.yy",},},
     {"roomId":{"name":"rm_black_cat","path":"rooms/rm_black_cat/rm_black_cat.yy",},},

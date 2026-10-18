@@ -73,6 +73,7 @@ player.hp = player.hpMax;
 player.isDefended = false;
 player.isFled = false;
 player.isSpared = false;
+player.candyDropped = 0;
 
 function BossIntro()
 {

@@ -16,11 +16,12 @@ bowlStartX = 225;
 bowlTapTimeRemaining = 0;
 bowlTapTimeFrames = 5;
 
-// timer
-timerTextStartPosition = 5;
+textStartPosition = 5;
+
+// correct
+correctTextStartY = 60;
 
 // error
-errorTextStartX = 5;
 errorTextStartY = 30;
 
 // key list

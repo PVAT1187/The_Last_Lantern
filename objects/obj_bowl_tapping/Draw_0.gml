@@ -25,7 +25,10 @@ draw_set_colour(c_gray);
 
 // timer
 var gameTimeRemaining = max(0, ceil(gameTimeFrames / game_get_speed(gamespeed_fps)));
-draw_text(timerTextStartPosition, timerTextStartPosition, "Time: " + string(gameTimeRemaining));
+draw_text(textStartPosition, textStartPosition, "Time: " + string(gameTimeRemaining));
+
+// correct
+draw_text(textStartPosition, correctTextStartY, "Correct: " + string(totalCorrectMatches));
 
 // error
-draw_text(errorTextStartX, errorTextStartY, "Error: " + string(totalErrorMatches));
+draw_text(textStartPosition, errorTextStartY, "Error: " + string(totalErrorMatches));
