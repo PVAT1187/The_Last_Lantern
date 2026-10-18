@@ -45,7 +45,12 @@ boxes = instance_create_layer(0, 0, "Instances", obj_draw_boxes);
 
 // state functions
 player = global.player.player;
-boss = variable_clone(global.bosses.dracula);
+
+// random boss
+var bosses = variable_struct_get_names(global.bosses);
+var randomBossIndex = irandom(array_length(bosses) - 1); 
+var chosenBoss = variable_struct_get(global.bosses, bosses[randomBossIndex]);
+boss = variable_clone(chosenBoss);
 
 combatants = [player, boss];
 

@@ -103,6 +103,42 @@ global.bosses =
             var action = actions[randomActionIndex];
             return action;
         }
+    },
+    
+    pumpkin:
+    {
+        name: "Hollow Reaper",
+        hp: 100,
+        hpMax: 100,
+        strength: 13,
+        sprites: { idle: spr_pumpkin_idle, attack: spr_pumpkin_attack, hit: spr_pumpkin_hit},
+        actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
+        candyValue: 10,
+        isDefended: false,
+        AIScript: function()
+        {
+            var randomActionIndex = irandom(array_length(actions) - 1);
+            var action = actions[randomActionIndex];
+            return action;
+        }
+    },
+    
+    scarecrow:
+    {
+        name: "Grimble",
+        hp: 100,
+        hpMax: 100,
+        strength: 15,
+        sprites: { idle: spr_scarecrow_idle, attack: spr_scarecrow_attack, hit: spr_scarecrow_hit},
+        actions: [ global.actions.attack, global.actions.defense ], // flee and plea options later
+        candyValue: 15,
+        isDefended: false,
+        AIScript: function()
+        {
+            var randomActionIndex = irandom(array_length(actions) - 1);
+            var action = actions[randomActionIndex];
+            return action;
+        }
     }
 }
 
