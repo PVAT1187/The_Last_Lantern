@@ -1,6 +1,6 @@
 {
   "$GMProject":"v1",
-  "%Name":"Spooky 2D Jam",
+  "%Name":"The_Last_Lantern",
   "AudioGroups":[
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -46,7 +46,7 @@
   "MetaData":{
     "IDEVersion":"2026.0.0.16",
   },
-  "name":"Spooky 2D Jam",
+  "name":"The_Last_Lantern",
   "resources":[
     {"id":{"name":"fn_m6x11","path":"fonts/fn_m6x11/fn_m6x11.yy",},},
     {"id":{"name":"obj_action_menu","path":"objects/obj_action_menu/obj_action_menu.yy",},},
